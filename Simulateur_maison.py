@@ -28,7 +28,7 @@ from plotly.subplots import make_subplots
 # Dossier unique des cycles arbitrés (généré par arbitre.py)
 # Format : {usage}_{source}_cycle{N}.csv  (source = LPG / SmartHouse / REFIT)
 CYCLES_FINAUX_DIR = Path("DATA/Cycles/cycles_finaux_simulateur")
-METEO_CSV = pd.read_csv("DATA/METEO/H_35_previous-2020-2024.zip")
+METEO_CSV = pd.read_csv("DATA/METEO/H_35_previous-2020-2024.zip", sep=";", encoding="utf-8", low_memory=False)
 METEO_STATION = "RENNES-ST JACQUES"
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -775,11 +775,12 @@ def load_meteo(meteo_csv: Path, station: str, annee: int) -> dict:
     Retourne un dict {date: temp_moy_C} avec une entrée par jour calendaire.
     """
 
-    if not meteo_csv.exists():
+    if meteo_csv.empty:
         return {}
     try:
-        df = pd.read_csv(meteo_csv, sep=";", encoding="utf-8",
-                         low_memory=False, usecols=["NOM_USUEL", "AAAAMMJJHH", "T"])
+        # On utilise directement le DataFrame au lieu de le relire !
+        df = meteo_csv.copy()
+        
         df = df[df["NOM_USUEL"] == station].copy()
         df["date"] = pd.to_datetime(df["AAAAMMJJHH"].astype(str),
                                     format="%Y%m%d%H", errors="coerce")
@@ -800,11 +801,12 @@ def get_available_years(meteo_csv: Path, station: str) -> list:
 
     """Retourne les années disponibles pour la station."""
 
-    if not meteo_csv.exists():
+    if meteo_csv.empty:
         return [2023]
     try:
-        df = pd.read_csv(meteo_csv, sep=";", encoding="utf-8",
-                         low_memory=False, usecols=["NOM_USUEL", "AAAAMMJJHH"])
+        # On utilise directement le DataFrame
+        df = meteo_csv.copy()
+        
         df = df[df["NOM_USUEL"] == station]
         years = sorted(df["AAAAMMJJHH"].astype(str).str[:4]
                        .astype(int).unique().tolist())
