@@ -1024,7 +1024,9 @@ def apply_cycle_calibration(cycles: list, cat: dict, usage: str = "") -> list:
 def _load_raw_cycles() -> tuple:
     """Lit les CSV une seule fois. Retourne (all_cycles, source_map)."""
     global CYCLE_SOURCE
-    if not CYCLES_FINAUX_DIR.exists():
+    
+    if not hasattr(CYCLES_FINAUX_DIR, 'exists') or not CYCLES_FINAUX_DIR.exists():
+        st.warning("Le dossier des cycles est introuvable sur le serveur.")
         return {}, {}
     csv_files = sorted(CYCLES_FINAUX_DIR.glob("*.csv"))
     source_map = {}
