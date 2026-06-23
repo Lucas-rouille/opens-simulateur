@@ -28,7 +28,7 @@ from plotly.subplots import make_subplots
 # Dossier unique des cycles arbitrés (généré par arbitre.py)
 # Format : {usage}_{source}_cycle{N}.csv  (source = LPG / SmartHouse / REFIT)
 CYCLES_FINAUX_DIR = Path("DATA/Cycles/cycles_finaux_simulateur")
-METEO_CSV = pd.read_csv("DATA/METEO/H_35_previous-2020-2024.zip", sep=";", encoding="utf-8", low_memory=False)
+METEO_CSV = None
 METEO_STATION = "RENNES-ST JACQUES"
 
 # ═══════════════════════════════════════════════════════════════════════════════
