@@ -1,0 +1,26 @@
+source,usage,fichier,durée_min,moy_W
+REFIT H1,electric_heater,electric_heater_29min_cycle1.csv,29,758.5
+REFIT H1,electric_heater,electric_heater_28min_cycle2.csv,28,645.3
+REFIT H1,electric_heater,electric_heater_27min_cycle3.csv,27,386.3
+REFIT H1,electric_heater,electric_heater_26min_cycle4.csv,26,539.4
+REFIT H1,electric_heater,electric_heater_26min_cycle5.csv,26,359.8
+REFIT H16,electric_heater,electric_heater_10min_cycle6.csv,10,715.9
+REFIT H16,electric_heater,electric_heater_12min_cycle7.csv,12,501.5
+REFIT H16,electric_heater,electric_heater_10min_cycle8.csv,10,669.4
+REFIT H16,electric_heater,electric_heater_19min_cycle9.csv,19,1190.6
+REFIT H16,electric_heater,electric_heater_18min_cycle10.csv,18,904.7
+REFIT H16,electric_heater,electric_heater_19min_cycle11.csv,19,701.2
+REFIT H16,electric_heater,electric_heater_20min_cycle12.csv,20,1004.9
+REFIT H16,electric_heater,electric_heater_16min_cycle13.csv,16,1670.5
+REFIT H1,dryer_refit,dryer_refit_39min_cycle1.csv,39,1264.0
+REFIT H1,dryer_refit,dryer_refit_62min_cycle2.csv,62,511.5
+REFIT H3,dryer_refit,dryer_refit_41min_cycle3.csv,41,1799.4
+REFIT H3,dryer_refit,dryer_refit_41min_cycle4.csv,41,2062.6
+REFIT H3,dryer_refit,dryer_refit_41min_cycle5.csv,41,2040.6
+REFIT H3,dryer_refit,dryer_refit_41min_cycle6.csv,41,2091.8
+REFIT H3,dryer_refit,dryer_refit_41min_cycle7.csv,41,1300.7
+REFIT H1,freezer,freezer_19min_cycle1.csv,19,46.2
+REFIT H1,freezer,freezer_19min_cycle2.csv,19,46.0
+REFIT H1,freezer,freezer_19min_cycle3.csv,19,45.9
+REFIT H1,freezer,freezer_19min_cycle4.csv,19,46.9
+REFIT H1,freezer,freezer_19min_cycle5.csv,19,46.8
