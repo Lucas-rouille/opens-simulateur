@@ -2103,7 +2103,7 @@ def _render_calendar(date_start: datetime.date,
     return html
 
 def main():
-
+    st.write("Le code a bien démarré !")
     st.set_page_config(page_title="Simulateur de charge", page_icon="🏠",
                        layout="wide")
     st.title("🏠 Simulateur de courbe de charge résidentielle")
