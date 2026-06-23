@@ -3544,7 +3544,7 @@ le délai et la probabilité configurés.
         use_meteo = st.toggle("Utiliser les données météo réelles (Rennes-St Jacques)",
                               value=True, key="use_meteo")
         meteo_data_loaded = {}
-        if use_meteo and METEO_CSV.exists():
+        if use_meteo and not METEO_CSV.empty:
             avail_years = get_available_years(METEO_CSV, METEO_STATION)
             col_m1, col_m2 = st.columns(2)
             with col_m1:
