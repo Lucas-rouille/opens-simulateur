@@ -2371,7 +2371,7 @@ domestiques et les distributions horaires d'usage des équipements.
                         if "🔵" in val:   return "background-color:#E3F2FD;color:#0D47A1"
                         return ""
                     st.dataframe(
-                        df_status.style.applymap(color_mode, subset=["Mode"]),
+                        df_status.style.map(color_mode, subset=["Mode"]),
                         use_container_width=True,
                         hide_index=True
                     )
